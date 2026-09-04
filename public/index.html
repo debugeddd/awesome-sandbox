@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 Awesome Sandbox</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🎮 Awesome Sandbox</h1>
+      <p>Interactive code execution environment for learning & demos</p>
+    </header>
+
+    <div class="workspace">
+      <div class="editor-section">
+        <div class="editor-header">
+          <h2>Code Editor</h2>
+          <div class="language-selector">
+            <select id="language">
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python (Coming soon)</option>
+            </select>
+          </div>
+        </div>
+        <textarea id="code-editor" placeholder="// Write your code here...\n// Example:\nconsole.log('Hello, Sandbox!');\nconst sum = (a, b) => a + b;\nconsole.log(sum(5, 3));">console.log('Hello, Sandbox!');</textarea>
+      </div>
+
+      <div class="controls">
+        <button id="execute-btn" class="btn btn-primary">▶ Execute</button>
+        <button id="clear-btn" class="btn btn-secondary">🗑 Clear</button>
+        <button id="validate-btn" class="btn btn-secondary">✓ Validate</button>
+        <button id="copy-btn" class="btn btn-secondary">📋 Copy</button>
+      </div>
+
+      <div class="output-section">
+        <div class="output-header">
+          <h2>Output</h2>
+          <span id="execution-time" class="execution-time"></span>
+        </div>
+        <div id="output" class="output">
+          <p class="placeholder">Output will appear here...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="examples-section">
+      <h2>📚 Examples</h2>
+      <div class="examples-grid">
+        <div class="example-card" onclick="loadExample('hello')">
+          <h3>Hello World</h3>
+          <p>Basic console output</p>
+        </div>
+        <div class="example-card" onclick="loadExample('array')">
+          <h3>Array Methods</h3>
+          <p>map, filter, reduce</p>
+        </div>
+        <div class="example-card" onclick="loadExample('async')">
+          <h3>Async/Await</h3>
+          <p>Promise handling</p>
+        </div>
+        <div class="example-card" onclick="loadExample('class')">
+          <h3>Classes</h3>
+          <p>OOP in JavaScript</p>
+        </div>
+        <div class="example-card" onclick="loadExample('recursion')">
+          <h3>Recursion</h3>
+          <p>Factorial & Fibonacci</p>
+        </div>
+        <div class="example-card" onclick="loadExample('regex')">
+          <h3>RegEx</h3>
+          <p>Pattern matching</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Made with ❤️ | Sandbox v1.0 | <a href="https://github.com/debugeddd/awesome-sandbox">GitHub</a></p>
+    </footer>
+  </div>
+
+  <script src="https://socket.io/4/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
